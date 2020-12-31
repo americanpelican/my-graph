@@ -1,0 +1,6 @@
+[user]
+    name = americanpelican
+    email = luis@pellicano.mobi
+    signingkey = 34a2f462af265fd08b4dcef563ebdf9634849378
+[commit]
+    gpgsign = false

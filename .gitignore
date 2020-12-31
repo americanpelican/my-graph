@@ -1,0 +1,14 @@
+.DS_Store
+.nyc_output
+.vscode
+build
+coverage
+etc
+dist
+lib
+node_modules
+release-builds
+types
+src/ea-tool/ea-tool-import-export
+src/ea-tool/ea-tool-repository
+src/ea-tool/ea-tool-standard

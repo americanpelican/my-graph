@@ -1,0 +1,82 @@
+{
+  "name": "@americanpelican/ea-tool-repository",
+  "productName": "Server repository for standard-based Enterprise Architecture models",
+  "version": "0.0.7",
+  "description": "",
+  "author": "americanpelican",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/americanpelican/ea-tool-repository.git"
+  },
+  "bugs": {
+    "url": "https://github.com/americanpelican/ea-tool-repository/issues"
+  },
+  "homepage": "https://github.com/americanpelican/ea-tool-repository#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*",
+    "types/**/*"
+  ],
+  "scripts": {
+    "tsc-and-node-watch": "npm-run-all tsc-watch webpack-dev",
+    "npm-packages-update": "npm update",
+    "build": "tsc",
+    "tsc-watch": "tsc --watch",
+    "webpack-dev": "webpack --mode=development",
+    "mocha-node-bundle-watch": "mocha -w --bail ./build/test/mocha.node.bundle.js",
+    "mocha-node-bundle-watch-old": "mocha -r jsdom-global/register -w --bail ./build/test/mocha.node.bundle.js",
+    "test": "mocha suite.spec.js",
+    "git-npm-login": "npm login --scope=@americanpelican --registry=https://npm.pkg.github.com",
+    "git-npm-publish": "npm publish",
+    "gpg-git-off": "git config commit.gpgsign false"
+  },
+  "dependencies": {
+    "@americanpelican/ea-tool-standard": "^0.1.1",
+    "@types/luxon": "^1.24.0",
+    "@types/pouchdb": "^6.4.0",
+    "@types/pouchdb-browser": "^6.1.3",
+    "@types/pouchdb-find": "^6.3.5",
+    "@types/uuid": "^7.0.4",
+    "iso-639-1": "^2.1.4",
+    "luxon": "^1.24.1",
+    "nano": "^8.2.2",
+    "pouchdb": "^7.2.1",
+    "pouchdb-find": "^7.2.1",
+    "uuid": "^7.0.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.4",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^7.2.0",
+    "mocha-jsdom": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "npx": "^10.2.0",
+    "nyc": "^15.0.1",
+    "raw-loader": "^4.0.1",
+    "source-map-support": "^0.5.19",
+    "typescript": "^3.9.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
