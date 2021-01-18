@@ -1,0 +1,147 @@
+{
+	"@context": {
+		"@version": 1.1,
+		"@base": "archimate:",
+		"@vocab": "#",
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+		"owl": "http://www.w3.org/2002/07/owl#",
+		"xml": "http://www.w3.org/XML/1998/namespace",
+		"schema": "http://schema.org",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"archimate": "http://archimate.tbd/namespace",
+		"Thing": "schema:Thing",
+		"property": "schema:property",
+		"url": "property:url",
+		"dateCreated": {
+			"@id": "schema:dateCreated",
+			"@type": "xsd:date"
+		},
+		"location": "schema:location",
+		"identifier": "schema:identifier",
+		"duration": {
+			"@id": "schema:duration",
+			"@type": "xsd:duration"
+		},
+		"isPartOf": {
+			"@type": "@id"
+		},
+		"isPropertyOf": {
+			"@type": "@id"
+		},
+		"isDefinedBy": {
+			"@type": "@id"
+		},
+		"refersTo": {
+			"@type": "@id"
+		},
+		"urn": "http://www.urn.org",
+		"ar": "http://www.ar.org/2021/01/21/repository",
+		"label": {
+			"@type": "ar:label",
+			"@id": "ar:label",
+			"@container": "@language"
+		},
+		"ar:property": {
+			"@type": "ar:property",
+			"@id": "ar:property",
+			"@container": "@language"
+		},
+		"propertyDef": {
+			"@type": "ar:propertyDef",
+			"@id": "ar:propertyDef",
+			"@container": "@language"
+		},
+		"valueDateTime": {
+			"@id": "ar:valueDateTime",
+			"@type": "xsd:dateTime"
+		},
+		"ar:object": {
+			"@type": "xsd:dateTime"
+		},
+		"name": {
+			"@id": "archimate:name",
+			"@container": "@language"
+		},
+		"documentation": {
+			"@id": "archimate:documentation",
+			"@container": "@language"
+		}
+	},
+	"@graph": [
+		{
+			"@id": "http://archimate.tbd/graph",
+			"generatedAt": "2012-04-09T00:00:00",
+			"@graph": [
+				{
+					"@id": "archimate:Model",
+					"@type": "owl:Class"
+				},
+				{
+					"@id": "archimate:Relationship",
+					"@type": "owl:Class"
+				},
+				{
+					"@id": "Influence",
+					"@type": "owl:Class",
+					"owl:subClass": "archimate:Relationship"
+				},
+				{
+					"@id": "archimate:Element",
+					"@type": "owl:Class"
+				},
+				{
+					"@id": "archimate:WorkPackage",
+					"@type": "owl:Class",
+					"owl:subClass": "archimate:Element"
+				}
+			]
+		},
+		{
+			"@id": "http://eatool.user/graph",
+			"generatedAt": "2012-04-09T00:00:00",
+			"@graph": [
+				{
+					"@id": "model_1",
+					"identifier": "123e4567-e89b-12d3-a456-426655440001",
+					"@type": "Model",
+					"ar:documentation": "test model",
+					"location": "New Orleans Arena, New Orleans, Louisiana, USA",
+					"dateCreated": "this is not a date"
+				},
+				{
+					"@id": "property_def_1",
+					"identifier": "123e4567-e89b-12d3-a456-426655440002",
+					"@type": "propertyDef",
+					"ar:documentation": "propertyDef",
+					"dateCreated": "this is not a date"
+				},
+				{
+					"@id": "work_package_1",
+					"identifier": "123e4567-e89b-12d3-a456-426655440003",
+					"@type": "archimate:WorkPackage",
+					"documentation": {
+						"en": "some project documentation",
+						"pt": "alguma documentacao de projeto"
+					},
+					"location": "New York City, New York, USA",
+					"dateCreated": "this is not a date",
+					"duration": "some duration",
+					"isPartOf": "model 1",
+					"name": {
+						"en": "some project",
+						"pt": "um projeto"
+					}
+				},
+				{
+					"@id": "4",
+					"identifier": "123e4567-e89b-12d3-a456-426655440004",
+					"@type": "ar:property",
+					"isDefinedBy": "property def 1",
+					"isPropertydOf": "work package 1",
+					"valueDateTime": "this should be a date time"
+				}
+			]
+		}
+	]
+}

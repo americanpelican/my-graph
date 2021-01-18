@@ -1,0 +1,16 @@
+{
+	"extends": "./tsconfig.base.json", // reference to the base configuration used, which should be pretty standard across repos
+
+	"references": [
+//		{"path": "../some-ts-repo"} // reference other TS projects to be imported, TSC recompiles changes
+	],
+
+	"compilerOptions": {
+		"composite": false, // enforces certain constraints which make it possible for build tools. Set rootdir to directory containing the tsconfig.json file.
+
+//		"paths": { // handle for TS projects to be imported in a way that aligns with Webpack resolve/alias
+//			"some-ts-repo": ["../../some-ts-repo"]
+//		}
+	}
+
+}

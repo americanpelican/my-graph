@@ -1,0 +1,169 @@
+{
+	"@context": {
+		"@version": 1.1,
+
+		"@base": "eatool:",
+		"@vocab": "#",
+
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+		"owl": "http://www.w3.org/2002/07/owl#",
+		"xml": "http://www.w3.org/XML/1998/namespace",
+
+		"type": "rdf:type",
+
+		"schema": "http://schema.org",
+		"Thing": "schema:Thing",
+		"property": "schema:property",
+		"url": "property:url",
+
+		"dateCreated": {
+			"@id": "schema:dateCreated",
+			"@type": "xsd:date"
+		},
+
+		"location": "schema:location",
+		"identifier": "schema:identifier",
+		"name": "schema:name",
+
+		"duration": {
+			"@id": "schema:duration",
+			"@type": "xsd:duration"
+		},
+
+		"isPartOf": {"@type": "@id"},
+
+		"isPropertyOf": {"@type": "@id"},
+
+		"isDefinedBy": {"@type": "@id"},
+
+		"refersTo": {"@type": "@id"},
+
+		"urn": "http://www.urn.org",
+
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+
+		"ar": "http://www.ar.org/2021/01/21/repository",
+
+		"label": {
+			"@type": "ar:label",
+			"@id": "ar:label",
+			"@container": "@language"
+		},
+
+		"ar:property": {
+			"@type": "ar:property",
+			"@id": "ar:property",
+			"@container": "@language"
+		},
+
+		"propertyDef": {
+			"@type": "ar:propertyDef",
+			"@id": "ar:propertyDef",
+			"@container": "@language"
+		},
+
+		"valueDateTime": {
+			"@id": "ar:valueDateTime",
+			"@type": "xsd:dateTime"
+		},
+
+		"documentation": {
+			"@type": "ar:documentation",
+			"@id": "ar:documentation",
+			"@container": "@language"
+		},
+
+		"ar:object": {
+			"@type": "xsd:dateTime"
+		},
+
+		"model": {
+			"@id": "ar:model",
+			"@type": "@id",
+			"@container": "@language"
+		},
+
+		"element": {
+			"@id": "ar:element",
+			"@type": "@id",
+			"@container": "@language"
+		},
+
+		"concept": {
+			"@id": "ar:concept",
+			"@type": "@id",
+			"@container": "@language"
+		},
+
+		"elementType": {
+			"@id": "concept:type",
+			"@type": "@id",
+			"@container": "@list"
+		},
+
+		"relationshipType": {
+			"@id": "ar:relationshipType",
+			"@type": "@id",
+			"@container": "@list"
+		},
+
+		"properties": {
+			"@id": "ar:properties",
+			"@container": ["@graph", "@id"]
+		}
+	},
+
+	"@graph": [
+		{ "@id": "Relationship",
+			"@type": "owl:Class"
+		},
+		{ "@id": "Assessment",
+			"@type": "owl:Class"
+		},
+		{
+			"@id": "model 1",
+			"identifier": "123e4567-e89b-12d3-a456-426655440001",
+			"@type": "model",
+			"ar:documentation": "test model",
+			"location": "New Orleans Arena, New Orleans, Louisiana, USA",
+			"dateCreated": "this is not a date"
+		},
+
+		{
+			"@id": "property def 1",
+			"identifier": "123e4567-e89b-12d3-a456-426655440002",
+			"@type": "propertyDef",
+			"ar:documentation": "propertyDef",
+			"dateCreated": "this is not a date"
+		},
+
+		{
+		"@id": "work package 1",
+		"identifier": "123e4567-e89b-12d3-a456-426655440003",
+		"@type": "element",
+		"ar:documentation": {
+			"en": "some project documentation",
+			"pt": "alguma documentacao de projeto"
+			}  ,
+		"location": "New York City, New York, USA",
+		"dateCreated": "this is not a date",
+		"duration": "some duration",
+		"isPartOf": "model 1",
+		"label": {
+			"en": "some project",
+			"pt": "um projeto"
+		}
+		},
+
+		{
+		"@id": "4",
+		"identifier": "123e4567-e89b-12d3-a456-426655440004",
+		"@type": "ar:property",
+		"isDefinedBy": "property def 1",
+		"isPropertydOf": "work package 1",
+		"valueDateTime": "this should be a date time"
+		}
+
+	]
+}

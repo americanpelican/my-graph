@@ -1,5 +1,5 @@
 # my-graph
-A Typescript-based graph server implementation which runs on top of high-performance databases, typically a document store, tuned to support visualizations of analyst-developed models.
+A minimalistic Typescript-based graph server implementation which runs on top of high-performance databases, typically a document store, tuned to support visualizations of analyst-developed models.
 
 # Audience
 Programmers/analysts who are interested to develop graph models, capture data as basis for later analysis, typically some form of diagram visualization.
@@ -7,17 +7,18 @@ Programmers/analysts who are interested to develop graph models, capture data as
 # Logical Structure
 ## Nodes
 Used to represent real-life entities, with a few rules and features:
-* Must have an unique identifier (UUID) to facilitate reference,
+* Must have an unique identifier to facilitate reference, if not given will be assiged UUID,
 * Must have exactly one type.
 ## Relationships
-Take place between two Nodes only, with a few rules and features:
-* Must have an unique identifier (UUID) to facilitate reference,
+Take place between a pair of Nodes, Relationships or a Node and Relationship, with a few rules and features:
+* Must have an unique identifier to facilitate reference, if not given will be assiged UUID,
 * Must have exactly one type.
 ## Labels
-Used to shape a domain or groups Nodes, Relationships into sets. Labels can be part of a hierarchy, including node type and associated constraints. Labels can be used to associate a set of Properties to Nodes and Relationships.
+Used to shape a domain or groups Nodes, Relationships into sets. Labels can be part of a hierarchy, including node type and associated constraints. Labels can be used to associate a set of Properties to Nodes and Relationships, with a few rules and features:
+* Must have an unique identifier to facilitate reference, if not given will be assiged UUID,
 ## Properties
 Name-value pairs are used to add qualities to nodes and relationships, with a few rules and features:
-* Must have an unique identifier (UUID) to facilitate reference,
+* Must have an unique identifier to facilitate reference, if not given will be assiged UUID,
 * Must have a definition of data types such as number, string and boolean that it can hold.
 ## Constraints
 Are used to ensure the nodes, relationships and properties adheres to the rules of the defined by types and labels.

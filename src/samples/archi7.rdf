@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:archimate="http://bp4mc2.org/def/archimate#">
+   <archimate:CourseOfAction rdf:about="urn:uuid:id-755c208d-2d93-415b-ba49-405bd45bcb5b">
+      <rdfs:label xml:lang="en">Course of Action</rdfs:label>
+      <archimate:influence rdf:resource="urn:uuid:id-24378147-a60b-484a-bce3-5bb79388145a"/>
+   </archimate:CourseOfAction>
+   <archimate:BusinessInterface rdf:about="urn:uuid:id-57d92bef-3c56-4d44-affb-a44be147252e">
+      <rdfs:label xml:lang="en">Business Interface</rdfs:label>
+      <rdfs:comment xml:lang="en">asdfasdfaerdsfsd</rdfs:comment>
+   </archimate:BusinessInterface>
+   <archimate:ApplicationComponent rdf:about="urn:uuid:id-a24fd0b8-56f6-4636-80b1-0b1f5a46436d">
+      <rdfs:label xml:lang="en">Application Component</rdfs:label>
+      <archimate:readWriteAccess rdf:resource="urn:uuid:id-883bea07-3479-4934-a78e-be352f2db4f3"/>
+      <archimate:association rdf:resource="urn:uuid:id-883bea07-3479-4934-a78e-be352f2db4f3"/>
+   </archimate:ApplicationComponent>
+   <archimate:DataObject rdf:about="urn:uuid:id-883bea07-3479-4934-a78e-be352f2db4f3">
+      <rdfs:label xml:lang="en">Data Object</rdfs:label>
+      <archimate:composition rdf:resource="urn:uuid:id-d263b72e-3eb5-4c13-9163-5438deeddb31"/>
+   </archimate:DataObject>
+   <archimate:DataObject rdf:about="urn:uuid:id-d263b72e-3eb5-4c13-9163-5438deeddb31">
+      <rdfs:label xml:lang="en">Data Object</rdfs:label>
+   </archimate:DataObject>
+   <archimate:ApplicationComponent rdf:about="urn:uuid:id-febda12f-7558-4c56-83a3-70a4021d213a">
+      <rdfs:label xml:lang="en">Application Component</rdfs:label>
+   </archimate:ApplicationComponent>
+   <archimate:Goal rdf:about="urn:uuid:id-24378147-a60b-484a-bce3-5bb79388145a">
+      <rdfs:label xml:lang="en">Goal</rdfs:label>
+   </archimate:Goal>
+   <archimate:AndJunction rdf:about="urn:uuid:id-cd5a0111-ae13-47e2-8c8e-552197b6f8f0">
+      <rdfs:label xml:lang="en">Junction</rdfs:label>
+   </archimate:AndJunction>
+   <archimate:AndJunction rdf:about="urn:uuid:id-5ea3c277-174f-4936-8065-c94ccf3347a1">
+      <rdfs:label xml:lang="en">Junction</rdfs:label>
+   </archimate:AndJunction>
+   <archimate:Location rdf:about="urn:uuid:id-9b63a000-df39-4e11-9a60-5065cea99260">
+      <rdfs:label xml:lang="en">Location</rdfs:label>
+   </archimate:Location>
+   <rdf:Statement rdf:about="urn:uuid:id-712610d7-3a96-42ee-8227-c5cd3a01df2a">
+      <rdf:subject rdf:resource="urn:uuid:id-a24fd0b8-56f6-4636-80b1-0b1f5a46436d"/>
+      <rdf:object rdf:resource="urn:uuid:id-883bea07-3479-4934-a78e-be352f2db4f3"/>
+      <rdf:predicate rdf:resource="http://bp4mc2.org/def/archimate#readWriteAccess"/>
+      <rdfs:label xml:lang="en">this is a relationship</rdfs:label>
+      <rdfs:comment xml:lang="en">some documentation</rdfs:comment>
+      <archimate:association rdf:resource="urn:uuid:id-755c208d-2d93-415b-ba49-405bd45bcb5b"/>
+   </rdf:Statement>
+</rdf:RDF>
